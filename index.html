@@ -12,31 +12,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-      /* CSS Reset & General Styles */
+      /* CSS Reset & Main Promo Matching Palette */
+      :root {
+        --bg-dark: #0f0f11;
+        --bg-card: #18181c;
+        --bg-card-hover: #222228;
+        --brand-red: #e52323;
+        --brand-red-hover: #c81e1e;
+        --brand-yellow: #f5b915;
+        --text-white: #ffffff;
+        --text-muted: #a1a1aa;
+        --border-color: #27272a;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
+
       body {
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        color: #111111;
-        background-color: #ffffff;
+        color: var(--text-white);
+        background-color: var(--bg-dark);
         line-height: 1.6;
       }
+
       a {
         color: inherit;
         text-decoration: none;
       }
-      
+
       /* Top Action Bar */
       .top-bar {
-        background-color: #111111;
-        color: #ffffff;
+        background-color: #000000;
+        border-bottom: 1px solid var(--border-color);
         padding: 12px 15px;
         font-size: 0.95rem;
         font-weight: 600;
       }
+
       .top-bar-container {
         max-width: 1100px;
         margin: 0 auto;
@@ -46,95 +61,127 @@
         align-items: center;
         gap: 12px;
       }
+
       .contact-links {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 15px;
+        gap: 18px;
       }
+
       .contact-item {
         display: inline-flex;
         align-items: center;
         gap: 6px;
+        transition: color 0.2s;
       }
+
       .contact-item:hover {
-        text-decoration: underline;
+        color: var(--brand-yellow);
       }
+
       .action-btns {
         display: flex;
         align-items: center;
         gap: 10px;
       }
+
       .btn-header {
-        background-color: #e53e3e;
-        color: #ffffff;
-        padding: 6px 14px;
-        border-radius: 4px;
+        background-color: var(--brand-red);
+        color: var(--text-white);
+        padding: 8px 16px;
+        border-radius: 6px;
         font-size: 0.85rem;
         font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
         transition: background 0.2s;
       }
+
       .btn-header:hover {
-        background-color: #c53030;
+        background-color: var(--brand-red-hover);
       }
+
       .btn-google {
         background-color: #4285f4;
-        color: #ffffff;
-        padding: 6px 14px;
-        border-radius: 4px;
+        color: var(--text-white);
+        padding: 8px 16px;
+        border-radius: 6px;
         font-size: 0.85rem;
         font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
         transition: background 0.2s;
       }
+
       .btn-google:hover {
         background-color: #3367d6;
       }
 
-      /* Hero / Banner Header */
+      /* Main Promo Top Banner (Swapped) */
       .hero-banner {
         width: 100%;
         background-color: #000000;
         text-align: center;
+        border-bottom: 3px solid var(--brand-red);
       }
+
       .hero-banner img {
-        max-width: 100%;
+        width: 100%;
+        max-width: 1100px;
         height: auto;
         display: block;
         margin: 0 auto;
       }
 
-      /* UK Yellow VRM Lookup Section */
-      #vrm-lookup-section {
-        background-color: #f8f9fa;
-        padding: 35px 15px;
-        text-align: center;
-        border-top: 1px solid #e0e0e0;
-        border-bottom: 2px solid #e0e0e0;
+      /* Lookup & Free Quote Section */
+      .lookup-quote-section {
+        padding: 40px 15px;
+        background: radial-gradient(circle at top, #1c1c22 0%, var(--bg-dark) 100%);
       }
-      .vrm-container {
-        max-width: 800px;
+
+      .lookup-quote-container {
+        max-width: 850px;
         margin: 0 auto;
       }
-      .vrm-title {
-        font-size: 1.5rem;
-        color: #111111;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        font-weight: 800;
-        letter-spacing: 0.5px;
+
+      .section-heading {
+        text-align: center;
+        margin-bottom: 25px;
       }
+
+      .section-heading h2 {
+        font-size: 2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-white);
+      }
+
+      .section-heading h2 span {
+        color: var(--brand-yellow);
+      }
+
+      .section-heading p {
+        color: var(--text-muted);
+        font-size: 1rem;
+        margin-top: 6px;
+      }
+
+      /* UK Registration Plate Box */
       .vrm-plate-box {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: #F5B915;
+        background-color: var(--brand-yellow);
         border: 3px solid #000000;
         border-radius: 10px;
         padding: 6px 10px;
-        max-width: 480px;
+        max-width: 520px;
         margin: 0 auto;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+        box-shadow: 0 8px 25px rgba(245, 185, 21, 0.25);
       }
+
       .vrm-gb-badge {
         background-color: #003399;
         color: #ffffff;
@@ -149,15 +196,18 @@
         user-select: none;
         flex-shrink: 0;
       }
+
       .vrm-gb-badge .flag {
         font-size: 18px;
         line-height: 1;
       }
+
       .vrm-gb-badge .text {
         font-size: 11px;
         letter-spacing: 1px;
         margin-top: 3px;
       }
+
       .vrm-input {
         background: transparent;
         border: none;
@@ -171,172 +221,331 @@
         text-align: center;
         outline: none;
       }
+
       .vrm-input::placeholder {
         color: rgba(0, 0, 0, 0.35);
         letter-spacing: 2px;
       }
+
       .vrm-button {
-        background-color: #111111;
-        color: #ffffff;
+        background-color: #000000;
+        color: var(--text-white);
         border: none;
-        padding: 12px 22px;
+        padding: 12px 24px;
         font-size: 15px;
-        font-weight: bold;
+        font-weight: 800;
         border-radius: 6px;
         cursor: pointer;
+        text-transform: uppercase;
         transition: background 0.2s, opacity 0.2s;
         white-space: nowrap;
         flex-shrink: 0;
       }
+
       .vrm-button:hover {
-        background-color: #333333;
+        background-color: var(--brand-red);
       }
+
       .vrm-button:disabled {
         opacity: 0.6;
         cursor: not-allowed;
       }
 
-      /* Trust Section */
-      .trust-section {
-        padding: 40px 20px;
-        background-color: #ffffff;
+      /* Quote Form Container */
+      .quote-form-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-top: 4px solid var(--brand-red);
+        border-radius: 12px;
+        padding: 30px;
+        margin-top: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .vrm-result-badge {
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+      }
+
+      .vrm-result-badge.found {
+        background-color: rgba(22, 163, 74, 0.15);
+        border: 1px solid #16a34a;
+        color: #4ade80;
+      }
+
+      .vrm-result-badge.not-found {
+        background-color: rgba(225, 29, 72, 0.15);
+        border: 1px solid var(--brand-red);
+        color: #fca5a5;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .form-group label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+      }
+
+      .form-control {
+        background-color: #0f0f12;
+        border: 1px solid #3f3f46;
+        color: var(--text-white);
+        padding: 12px 14px;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        font-family: inherit;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      .form-control:focus {
+        border-color: var(--brand-yellow);
+        box-shadow: 0 0 0 2px rgba(245, 185, 21, 0.2);
+      }
+
+      .form-control[readonly] {
+        background-color: #1f1f24;
+        color: var(--brand-yellow);
+        font-weight: 700;
+      }
+
+      .submit-quote-btn {
+        background-color: var(--brand-red);
+        color: var(--text-white);
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+        transition: background 0.2s, transform 0.1s;
+      }
+
+      .submit-quote-btn:hover {
+        background-color: var(--brand-red-hover);
+      }
+
+      .submit-quote-btn:active {
+        transform: scale(0.99);
+      }
+
+      /* Featured Valves & Services Big Banner */
+      .valves-banner-section {
+        width: 100%;
+        background-color: #000000;
+        border-top: 3px solid var(--brand-yellow);
+        border-bottom: 3px solid var(--brand-red);
+        padding: 20px 0;
         text-align: center;
       }
+
+      .valves-banner-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .valves-banner-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        display: block;
+      }
+
+      /* Trust Section */
+      .trust-section {
+        padding: 60px 20px;
+        background-color: var(--bg-dark);
+      }
+
       .trust-container {
         max-width: 1100px;
         margin: 0 auto;
       }
-      .trust-title {
-        font-size: 1.8rem;
-        font-weight: 800;
-        margin-bottom: 10px;
-        color: #111111;
-      }
-      .trust-subtitle {
-        font-size: 1.1rem;
-        color: #555555;
-        margin-bottom: 30px;
-      }
+
       .trust-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
         gap: 20px;
       }
+
       .trust-card {
-        background: #f9fafb;
-        border: 1px solid #e5e7eb;
-        padding: 25px 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-      }
-      .trust-icon {
-        font-size: 2.2rem;
-        margin-bottom: 12px;
-      }
-      .trust-card h3 {
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-bottom: 8px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        padding: 28px 20px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.2s, border-color 0.2s;
       }
 
-      /* Media Gallery / Promos */
-      .promo-section {
-        padding: 40px 20px;
-        background-color: #f3f4f6;
+      .trust-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--brand-yellow);
       }
-      .promo-container {
+
+      .trust-icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+      }
+
+      .trust-card h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+        color: var(--brand-yellow);
+      }
+
+      .trust-card p {
+        color: var(--text-muted);
+        font-size: 0.92rem;
+      }
+
+      /* Services Grid Section */
+      .services-section {
+        padding: 60px 20px;
         max-width: 1100px;
         margin: 0 auto;
       }
-      .promo-grid {
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .service-box {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-left: 5px solid var(--brand-red);
+        padding: 24px;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .service-box h4 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        color: var(--text-white);
+      }
+
+      .service-box p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      /* Promo Flyers Gallery */
+      .flyers-section {
+        padding: 50px 20px;
+        background-color: #121215;
+      }
+
+      .flyers-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .flyers-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 25px;
-        align-items: center;
       }
-      .promo-card {
-        background: #ffffff;
+
+      .flyer-card {
+        background: var(--bg-card);
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       }
-      .promo-card img {
+
+      .flyer-card img {
         width: 100%;
         height: auto;
         display: block;
       }
 
-      /* Services Section */
-      .services-section {
-        padding: 50px 20px;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin-top: 25px;
-      }
-      .service-box {
-        border-left: 4px solid #F5B915;
-        background-color: #f9fafb;
-        padding: 20px;
-        border-radius: 0 8px 8px 0;
-      }
-      .service-box h4 {
-        font-size: 1.15rem;
-        font-weight: 700;
-        margin-bottom: 8px;
-      }
-
       /* Footer */
       footer {
-        background-color: #111111;
-        color: #9ca3af;
-        padding: 30px 20px;
+        background-color: #000000;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-muted);
+        padding: 40px 20px;
         text-align: center;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
       }
-      footer p {
-        margin-bottom: 8px;
+
+      footer strong {
+        color: var(--text-white);
       }
+
       footer a {
-        color: #ffffff;
+        color: var(--brand-yellow);
         text-decoration: underline;
       }
 
-      /* Mobile Adjustments */
+      /* Mobile Responsive Fine-tuning */
       @media (max-width: 600px) {
         .top-bar-container {
           flex-direction: column;
           text-align: center;
         }
+
         .action-btns {
           width: 100%;
           justify-content: center;
         }
+
         .vrm-plate-box {
           padding: 5px 8px;
         }
+
         .vrm-input {
           font-size: 20px;
           letter-spacing: 2px;
         }
+
         .vrm-button {
           padding: 10px 14px;
           font-size: 13px;
         }
+
         .vrm-gb-badge {
           padding: 6px 8px;
           margin-right: 6px;
+        }
+
+        .quote-form-card {
+          padding: 20px 15px;
         }
       }
     </style>
 </head>
 <body>
 
-  <!-- 1. TOP CONTACT & ACTION BAR -->
+  <!-- 1. TOP BAR WITH UPDATED GOOGLE REVIEW LINK -->
   <header class="top-bar">
     <div class="top-bar-container">
       <div class="contact-links">
@@ -351,36 +560,36 @@
         <a href="https://maps.google.com/?q=Tyre+Warehouse+Denton+Burn" target="_blank" rel="noopener" class="btn-header">
           📍 Get Directions
         </a>
-        <a href="https://g.page/r/TyreWarehouseDentonBurn/review" target="_blank" rel="noopener" class="btn-google">
+        <!-- Updated Exact Google Review Link -->
+        <a href="https://g.page/r/CSRbT-FU-FCYEBM/review" target="_blank" rel="noopener" class="btn-google">
           ⭐ Rate Us On Google
         </a>
       </div>
     </div>
   </header>
 
-  <!-- 2. MAIN BANNER -->
+  <!-- 2. SWAPPED TOP BANNER: MAIN PROMO -->
   <div class="hero-banner">
-    <img src="banner.jpg" alt="Tyre Warehouse Denton Burn Banner" onerror="this.style.display='none'">
+    <img src="main-promo.jpg" alt="Tyre Warehouse Denton Burn Main Promo" onerror="this.style.display='none'">
   </div>
 
-  <!-- MAIN CONTENT WRAPPER -->
   <main>
-    <!-- 3. UK YELLOW NUMBER PLATE SEARCH WIDGET -->
-    <section id="vrm-lookup-section">
-      <div class="vrm-container">
+    <!-- 3. VRM LOOKUP & INSTANT FREE TYRE QUOTE FORM -->
+    <section class="lookup-quote-section">
+      <div class="lookup-quote-container">
         
-        <h2 class="vrm-title">🚗 Find Tyres For Your Vehicle</h2>
+        <div class="section-heading">
+          <h2>Find Tyres & Get A <span>Free Quote</span></h2>
+          <p>Enter your registration below to instantly lookup your vehicle and request our best fitted prices.</p>
+        </div>
 
-        <!-- Authentic UK Yellow Registration Plate Box -->
+        <!-- UK Registration Plate Input Box -->
         <div class="vrm-plate-box">
-          
-          <!-- Blue UK/GB Flag Badge -->
           <div class="vrm-gb-badge" aria-hidden="true">
             <span class="flag">🇬🇧</span>
             <span class="text">UK</span>
           </div>
           
-          <!-- VRM Registration Input Field -->
           <input 
             type="text" 
             id="vrmInput" 
@@ -392,112 +601,209 @@
             spellcheck="false"
           />
           
-          <!-- Search Button -->
-          <button id="vrmSearchBtn" onclick="searchVehicleReg()" class="vrm-button" aria-label="Lookup Vehicle Details">
+          <button id="vrmSearchBtn" onclick="searchVehicleReg()" class="vrm-button">
             LOOKUP
           </button>
         </div>
 
-        <!-- Live Search Results Display -->
-        <div id="vrmResultContainer" style="margin-top: 20px; display: none; text-align: left;"></div>
+        <!-- Dynamic Free Tyre Quote Form (Pre-populated from Reg Lookup) -->
+        <div class="quote-form-card" id="quoteFormCard">
+          
+          <div id="vrmStatusBadge" class="vrm-result-badge" style="display: none;"></div>
+
+          <form id="tyreQuoteForm" onsubmit="handleQuoteSubmit(event)">
+            <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; color: var(--text-white); text-transform: uppercase;">
+              📝 Request Your Free Tyre Quote
+            </h3>
+
+            <div class="form-grid">
+              <!-- Vehicle Registration (Auto-filled) -->
+              <div class="form-group">
+                <label for="vrmQuoteInput">Vehicle Registration</label>
+                <input type="text" id="vrmQuoteInput" class="form-control" placeholder="e.g. AB12 CDE" required>
+              </div>
+
+              <!-- Vehicle Details (Auto-filled from API if found) -->
+              <div class="form-group">
+                <label for="vehicleDetailsInput">Vehicle Make / Model</label>
+                <input type="text" id="vehicleDetailsInput" class="form-control" placeholder="e.g. Ford Focus / Not specified">
+              </div>
+
+              <!-- Customer Name -->
+              <div class="form-group">
+                <label for="customerName">Your Full Name *</label>
+                <input type="text" id="customerName" class="form-control" placeholder="John Smith" required>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="form-group">
+                <label for="customerPhone">Phone Number *</label>
+                <input type="tel" id="customerPhone" class="form-control" placeholder="07123 456789" required>
+              </div>
+
+              <!-- Email Address -->
+              <div class="form-group">
+                <label for="customerEmail">Email Address</label>
+                <input type="email" id="customerEmail" class="form-control" placeholder="john@example.com">
+              </div>
+
+              <!-- Tyre Size -->
+              <div class="form-group">
+                <label for="tyreSize">Tyre Size (if known)</label>
+                <input type="text" id="tyreSize" class="form-control" placeholder="e.g. 205/55 R16">
+              </div>
+
+              <!-- Quantity Required -->
+              <div class="form-group">
+                <label for="tyreQty">Quantity Needed *</label>
+                <select id="tyreQty" class="form-control" required>
+                  <option value="1">1 Tyre</option>
+                  <option value="2" selected>2 Tyres</option>
+                  <option value="3">3 Tyres</option>
+                  <option value="4">4 Tyres (Full Set)</option>
+                  <option value="5+">More than 4</option>
+                </select>
+              </div>
+
+              <!-- Tyre Preference -->
+              <div class="form-group">
+                <label for="tyreTypePref">Tyre Preference</label>
+                <select id="tyreTypePref" class="form-control">
+                  <option value="Best Price / Budget">Best Price / Budget</option>
+                  <option value="Mid-Range">Mid-Range Brand</option>
+                  <option value="Premium Brand">Premium (Michelin, Continental, etc.)</option>
+                  <option value="Quality Part Worn">Quality Inspected Part-Worn</option>
+                </select>
+              </div>
+
+              <!-- Message / Notes -->
+              <div class="form-group full-width">
+                <label for="quoteNotes">Additional Requirements / Notes</label>
+                <textarea id="quoteNotes" class="form-control" rows="3" placeholder="Tell us if you need fitting today, tracking, or puncture repair..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-quote-btn">
+              📩 SUBMIT FREE QUOTE REQUEST
+            </button>
+          </form>
+
+          <!-- Submission Feedback Container -->
+          <div id="quoteSubmitResult" style="display: none; margin-top: 20px;"></div>
+
+        </div>
 
       </div>
     </section>
 
-    <!-- 4. HIGHLY TRUSTED GARAGE SECTION -->
+    <!-- 4. BIG FEATURED BANNER: VALVES & SERVICES (POSITIONED RIGHT AFTER LOOKUP) -->
+    <section class="valves-banner-section">
+      <div class="valves-banner-container">
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--brand-yellow); margin-bottom: 15px; text-transform: uppercase;">
+          ⚙️ Professional Valves, TPMS & Tyre Servicing
+        </h3>
+        <img src="valves-services.jpg" alt="Valves and Tyre Servicing Banner" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <!-- 5. TRUSTED GARAGE HIGHLIGHTS -->
     <section class="trust-section">
       <div class="trust-container">
-        <h2 class="trust-title">Highly Trusted Garage in Denton Burn</h2>
-        <p class="trust-subtitle">Your local specialists for fast, reliable, and affordable tyre replacement & servicing in Newcastle.</p>
-        
+        <div class="section-heading">
+          <h2>Why Choose <span>Tyre Warehouse Denton Burn</span></h2>
+          <p>Newcastle's primary destination for immediate tyre replacement and wheel care.</p>
+        </div>
+
         <div class="trust-grid">
           <div class="trust-card">
             <div class="trust-icon" aria-hidden="true">🛞</div>
-            <h3>Massive Tyre Stock</h3>
-            <p>Over 3,000 budget, mid-range, and premium tyres ready for immediate fitting.</p>
+            <h3>3,000+ Tyres In Stock</h3>
+            <p>Massive inventory of budget, mid-range, and premium brand tyres ready on the shelf.</p>
           </div>
           <div class="trust-card">
             <div class="trust-icon" aria-hidden="true">⚡</div>
-            <h3>Fast Drive-In Service</h3>
-            <p>No appointment necessary! Pop in for instant fitting, balancing, and repairs.</p>
+            <h3>No Appointment Needed</h3>
+            <p>Fast drive-in fitting service. Stop by anytime for instant turnaround.</p>
           </div>
           <div class="trust-card">
             <div class="trust-icon" aria-hidden="true">💰</div>
-            <h3>Unbeatable Value</h3>
-            <p>Transparent pricing with zero hidden fees. Quality guaranteed on all fitting.</p>
+            <h3>Unbeatable Prices</h3>
+            <p>Transparent quotes with no hidden fitting fees or extra charges.</p>
           </div>
           <div class="trust-card">
             <div class="trust-icon" aria-hidden="true">⭐</div>
-            <h3>Top Customer Rated</h3>
-            <p>Trusted by hundreds of local drivers in Denton Burn and across Newcastle.</p>
+            <h3>5-Star Rated Service</h3>
+            <p>Trusted by thousands of satisfied drivers across Denton Burn and Newcastle.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. PROMOS & FLYERS GALLERY -->
-    <section class="promo-section">
-      <div class="promo-container">
-        <div class="promo-grid">
-          <div class="promo-card">
-            <img src="main-flyer.jpg" alt="Tyre Warehouse Denton Burn Main Flyer" onerror="this.style.display='none'">
-          </div>
-          <div class="promo-card">
-            <img src="main-promo.jpg" alt="Tyre Warehouse Denton Burn Promotions" onerror="this.style.display='none'">
-          </div>
-          <div class="promo-card">
-            <img src="valves-services.jpg" alt="Valves & Services" onerror="this.style.display='none'">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. OUR SERVICES SECTION -->
+    <!-- 6. SERVICES OVERVIEW -->
     <section class="services-section">
-      <h2 style="font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 10px;">Our Garage Services</h2>
-      <p style="text-align: center; color: #666666;">Comprehensive tyre care and maintenance under one roof in Denton Burn.</p>
-      
+      <div class="section-heading">
+        <h2>Complete <span>Tyre & Wheel Services</span></h2>
+      </div>
+
       <div class="services-grid">
         <div class="service-box">
           <h4>New & Part-Worn Tyres</h4>
-          <p>Premium brands (Michelin, Continental, Goodyear) alongside budget-friendly new and quality inspected part-worn tyres.</p>
+          <p>Top brands including Michelin, Goodyear, Continental, and Pirelli alongside safety-tested budget and part-worn options.</p>
         </div>
         <div class="service-box">
-          <h4>Wheel Balancing & Alignment</h4>
-          <p>Precision balancing to prevent uneven wear, steering vibration, and extend the lifespan of your tyres.</p>
+          <h4>Computerised Wheel Balancing</h4>
+          <p>Eliminate steering vibrations, ensure smooth highway driving, and prevent premature tyre wear.</p>
         </div>
         <div class="service-box">
           <h4>Puncture Repairs</h4>
-          <p>Fast, safe puncture repair services adhering to British Safety Standards (BS AU 159).</p>
+          <p>Safe, compliant British Standard (BS AU 159) puncture repairs to get you back on the road safely.</p>
         </div>
         <div class="service-box">
-          <h4>Valves & Tyre Servicing</h4>
-          <p>TPMS sensor checking, standard valve replacements, and air pressure checks for peak fuel efficiency.</p>
+          <h4>Valves & TPMS Diagnostics</h4>
+          <p>Valve replacements, TPMS sensor programming, and air pressure checkups for maximum fuel efficiency.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. PROMO FLYERS & GALLERY -->
+    <section class="flyers-section">
+      <div class="flyers-container">
+        <div class="flyers-grid">
+          <div class="flyer-card">
+            <img src="main-flyer.jpg" alt="Tyre Warehouse Main Flyer" onerror="this.style.display='none'">
+          </div>
+          <div class="flyer-card">
+            <img src="banner.jpg" alt="Tyre Warehouse Service Banner" onerror="this.style.display='none'">
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- 7. FOOTER & LOCATION INFO -->
+  <!-- 8. FOOTER -->
   <footer>
-    <p><strong>Tyre Warehouse Denton Burn</strong> — Newcastle upon Tyne</p>
-    <p>Landline: <a href="tel:01914472130">0191 447 2130</a> | Mobile: <a href="tel:07804911855">07804 911 855</a></p>
-    <p style="margin-top: 15px; font-size: 0.8rem; color: #6b7280;">© Tyre Warehouse Denton Burn. All Rights Reserved.</p>
+    <p><strong>Tyre Warehouse Denton Burn</strong> — Denton Burn, Newcastle upon Tyne</p>
+    <p style="margin: 8px 0;">Landline: <a href="tel:01914472130">0191 447 2130</a> | Mobile: <a href="tel:07804911855">07804 911 855</a></p>
+    <p><a href="https://g.page/r/CSRbT-FU-FCYEBM/review" target="_blank" rel="noopener">Leave Us A Review On Google ⭐</a></p>
+    <p style="margin-top: 20px; font-size: 0.8rem; color: #52525b;">© Tyre Warehouse Denton Burn. All Rights Reserved.</p>
   </footer>
 
-  <!-- 8. VRM LOOKUP JAVASCRIPT & UX ENHANCEMENTS -->
+  <!-- 9. JAVASCRIPT: VRM API & QUOTE FORM INTEGRATION -->
   <script>
-    // Enable "Enter" key trigger on input field & auto-uppercase text
     document.addEventListener('DOMContentLoaded', function() {
       const vrmInput = document.getElementById('vrmInput');
-      
+      const vrmQuoteInput = document.getElementById('vrmQuoteInput');
+
       if (vrmInput) {
-        // Automatically convert typed letters to uppercase
+        // Auto convert input to uppercase
         vrmInput.addEventListener('input', function() {
           this.value = this.value.toUpperCase();
+          if (vrmQuoteInput) {
+            vrmQuoteInput.value = this.value;
+          }
         });
 
-        // Trigger search when pressing Enter key
+        // Trigger lookup on Enter key press
         vrmInput.addEventListener('keydown', function(event) {
           if (event.key === 'Enter') {
             event.preventDefault();
@@ -510,27 +816,33 @@
     async function searchVehicleReg() {
       const inputEl = document.getElementById('vrmInput');
       const searchBtn = document.getElementById('vrmSearchBtn');
-      const resultContainer = document.getElementById('vrmResultContainer');
-      const vrmInput = inputEl.value.trim().replace(/\s+/g, '').toUpperCase();
+      const badgeEl = document.getElementById('vrmStatusBadge');
+      const vrmQuoteInput = document.getElementById('vrmQuoteInput');
+      const vehicleDetailsInput = document.getElementById('vehicleDetailsInput');
+      
+      const vrm = inputEl.value.trim().replace(/\s+/g, '').toUpperCase();
 
-      if (!vrmInput) {
+      if (!vrm) {
         alert("Please enter a vehicle registration plate.");
         inputEl.focus();
         return;
       }
 
-      // Lock UI while fetching
+      // Sync registration into the form field immediately
+      vrmQuoteInput.value = vrm;
+
+      // Update UI state during search
       searchBtn.disabled = true;
-      searchBtn.innerText = "SEARCHING...";
-      resultContainer.style.display = 'block';
-      resultContainer.innerHTML = `
-        <div style="background: #ffffff; border: 2px solid #F5B915; padding: 16px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-          <p style="margin: 0; font-weight: bold; color: #333333;">Checking DVLA database for <strong>${vrmInput}</strong>...</p>
-        </div>
-      `;
+      searchBtn.innerText = "LOOKING UP...";
+      badgeEl.style.display = 'block';
+      badgeEl.className = 'vrm-result-badge';
+      badgeEl.style.backgroundColor = 'rgba(245, 185, 21, 0.15)';
+      badgeEl.style.border = '1px solid var(--brand-yellow)';
+      badgeEl.style.color = 'var(--brand-yellow)';
+      badgeEl.innerHTML = `<strong>🔍 Checking DVLA database for ${vrm}...</strong>`;
 
       try {
-        const response = await fetch(`https://zyfy.uk/v1/vehicle/${vrmInput}`, {
+        const response = await fetch(`https://zyfy.uk/v1/vehicle/${vrm}`, {
           method: 'GET',
           headers: {
             'X-Api-Key': 'ea_live_tPzJU-ofaYM9IIShzJGn8pYTfDOc1z4jQm07kVJkmbc',
@@ -541,47 +853,88 @@
         if (response.ok) {
           const data = await response.json();
           const make = data.make || 'Vehicle';
-          const color = data.colour || data.signals?.colour || 'Standard';
-          const tax = data.signals?.taxStatus || 'Active';
-          const mot = data.signals?.motStatus || 'Active';
+          const color = data.colour || data.signals?.colour || '';
+          const detailsStr = `${make} ${color ? '(' + color + ')' : ''}`.trim();
 
-          resultContainer.innerHTML = `
-            <div style="background: #f0fdf4; border: 2px solid #16a34a; padding: 20px; border-radius: 10px; color: #14532d; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-              <h3 style="margin: 0 0 8px 0; color: #15803d; font-size: 1.25rem;">✅ Vehicle Found: ${make} (${color})</h3>
-              <p style="margin: 0 0 12px 0; font-size: 0.95rem; color: #365314;">
-                <strong>MOT Status:</strong> ${mot.toUpperCase()} | <strong>Tax Status:</strong> ${tax.toUpperCase()}
-              </p>
-              <div style="background: #ffffff; border-left: 4px solid #16a34a; padding: 12px; margin-bottom: 15px; border-radius: 4px;">
-                <p style="margin: 0; font-weight: bold; color: #111111;">
-                  We have budget, mid-range, and premium tyres in stock for this ${make}!
-                </p>
-              </div>
-              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <a href="tel:01914472130" style="background: #16a34a; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">📞 Call 0191 447 2130</a>
-                <a href="tel:07804911855" style="background: #111111; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">📱 Mobile: 07804 911 855</a>
-              </div>
-            </div>
+          // Auto-fill vehicle details in quote form
+          vehicleDetailsInput.value = detailsStr;
+
+          // Display success badge
+          badgeEl.className = 'vrm-result-badge found';
+          badgeEl.innerHTML = `
+            <h4 style="margin-bottom: 4px; font-size: 1.1rem;">✅ Vehicle Identified: ${detailsStr}</h4>
+            <p style="font-size: 0.9rem; margin: 0;">We have fitted tyre options available for this ${make}. Complete the form below for your instant free quote!</p>
           `;
         } else {
-          resultContainer.innerHTML = `
-            <div style="background: #fff7ed; border: 2px solid #ea580c; padding: 16px; border-radius: 8px; color: #9a3412;">
-              <p style="margin: 0; font-weight: bold;">⚠️ Vehicle registration not found.</p>
-              <p style="margin: 6px 0 0 0; font-size: 0.9rem;">Please double-check the plate or call us directly at <strong>0191 447 2130</strong> for instant stock verification.</p>
-            </div>
+          // Registration Not Found in DVLA, but form stays ready for submit
+          vehicleDetailsInput.value = '';
+          badgeEl.className = 'vrm-result-badge not-found';
+          badgeEl.innerHTML = `
+            <h4 style="margin-bottom: 4px; font-size: 1.05rem;">⚠️ Registration (${vrm}) Not Found In Database</h4>
+            <p style="font-size: 0.9rem; margin: 0;">No problem! You can still submit your quote request below and our team will check manually.</p>
           `;
         }
       } catch (err) {
-        resultContainer.innerHTML = `
-          <div style="background: #fff7ed; border: 2px solid #ea580c; padding: 16px; border-radius: 8px; color: #9a3412;">
-            <p style="margin: 0; font-weight: bold;">⚠️ Unable to reach lookup database.</p>
-            <p style="margin: 6px 0 0 0; font-size: 0.9rem;">Please call <strong>0191 447 2130</strong> directly for tyre options.</p>
-          </div>
+        // API Error fallback
+        badgeEl.className = 'vrm-result-badge not-found';
+        badgeEl.innerHTML = `
+          <h4 style="margin-bottom: 4px; font-size: 1.05rem;">⚠️ Direct DVLA Lookup Unavailable</h4>
+          <p style="font-size: 0.9rem; margin: 0;">You can still fill in the form below or call <strong>0191 447 2130</strong> directly for immediate prices.</p>
         `;
       } finally {
-        // Unlock UI
         searchBtn.disabled = false;
         searchBtn.innerText = "LOOKUP";
+        
+        // Smoothly scroll to the quote form for seamless UX
+        document.getElementById('quoteFormCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+    }
+
+    function handleQuoteSubmit(event) {
+      event.preventDefault();
+
+      const reg = document.getElementById('vrmQuoteInput').value;
+      const vehicle = document.getElementById('vehicleDetailsInput').value || 'N/A';
+      const name = document.getElementById('customerName').value;
+      const phone = document.getElementById('customerPhone').value;
+      const qty = document.getElementById('tyreQty').value;
+      const pref = document.getElementById('tyreTypePref').value;
+      const size = document.getElementById('tyreSize').value || 'To be verified';
+
+      const resultContainer = document.getElementById('quoteSubmitResult');
+      const form = document.getElementById('tyreQuoteForm');
+
+      // Hide form and display confirmation box
+      form.style.display = 'none';
+      resultContainer.style.display = 'block';
+
+      resultContainer.innerHTML = `
+        <div style="background-color: rgba(22, 163, 74, 0.2); border: 2px solid #16a34a; padding: 25px; border-radius: 10px; text-align: center;">
+          <h3 style="color: #4ade80; font-size: 1.5rem; margin-bottom: 10px;">🎉 Quote Request Received!</h3>
+          <p style="color: #e4e4e7; font-size: 1rem; margin-bottom: 15px;">
+            Thank you <strong>${name}</strong>. Our team in Denton Burn is reviewing tyre stock for <strong>${reg}</strong> (${qty}x tyre, ${pref}).
+          </p>
+          <div style="background: #0f0f12; border: 1px solid #27272a; padding: 15px; border-radius: 6px; text-align: left; margin-bottom: 20px; font-size: 0.9rem;">
+            <p style="margin-bottom: 4px;"><strong>Contact Phone:</strong> ${phone}</p>
+            <p style="margin-bottom: 4px;"><strong>Vehicle Details:</strong> ${vehicle}</p>
+            <p style="margin-bottom: 4px;"><strong>Tyre Size Requested:</strong> ${size}</p>
+          </div>
+          <p style="color: var(--brand-yellow); font-weight: bold; margin-bottom: 15px;">
+            Need an immediate price or urgent fitting today? Call us directly:
+          </p>
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="tel:01914472130" style="background-color: var(--brand-red); color: white; padding: 12px 20px; border-radius: 6px; font-weight: bold; text-decoration: none;">📞 Call 0191 447 2130</a>
+            <button onclick="resetQuoteForm()" style="background-color: #3f3f46; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; cursor: pointer;">Submit Another Request</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function resetQuoteForm() {
+      document.getElementById('tyreQuoteForm').reset();
+      document.getElementById('tyreQuoteForm').style.display = 'block';
+      document.getElementById('quoteSubmitResult').style.display = 'none';
+      document.getElementById('vrmStatusBadge').style.display = 'none';
     }
   </script>
 </body>
