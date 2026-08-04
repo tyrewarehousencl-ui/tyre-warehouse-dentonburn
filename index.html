@@ -97,26 +97,34 @@
         margin: 0 auto;
       }
 
-      /* UK Yellow VRM Lookup Section */
+      /* Feature Section: Highly Trusted Header + Yellow VRM Lookup + Platforms Bar */
       #vrm-lookup-section {
         background-color: #f8f9fa;
-        padding: 35px 15px;
+        padding: 40px 15px;
         text-align: center;
         border-top: 1px solid #e0e0e0;
         border-bottom: 2px solid #e0e0e0;
       }
       .vrm-container {
-        max-width: 800px;
+        max-width: 850px;
         margin: 0 auto;
       }
-      .vrm-title {
-        font-size: 1.5rem;
+      .vrm-main-heading {
+        font-size: 1.85rem;
         color: #111111;
-        margin-bottom: 15px;
+        margin-bottom: 6px;
         text-transform: uppercase;
-        font-weight: 800;
+        font-weight: 900;
         letter-spacing: 0.5px;
       }
+      .vrm-sub-heading {
+        font-size: 1.05rem;
+        color: #d97706;
+        font-weight: 700;
+        margin-bottom: 22px;
+      }
+      
+      /* Yellow License Plate Box */
       .vrm-plate-box {
         display: flex;
         align-items: center;
@@ -125,9 +133,9 @@
         border: 3px solid #000000;
         border-radius: 10px;
         padding: 6px 10px;
-        max-width: 480px;
-        margin: 0 auto;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+        max-width: 520px;
+        margin: 0 auto 25px auto;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.2);
       }
       .vrm-gb-badge {
         background-color: #003399;
@@ -168,19 +176,53 @@
         background-color: #111111;
         color: #ffffff;
         border: none;
-        padding: 12px 22px;
+        padding: 12px 24px;
         font-size: 15px;
         font-weight: bold;
         border-radius: 6px;
         cursor: pointer;
-        transition: background 0.2s;
+        transition: background 0.2s, transform 0.1s;
         white-space: nowrap;
       }
       .vrm-button:hover {
         background-color: #333333;
+        transform: scale(1.02);
       }
 
-      /* Trust Section */
+      /* Multi-Platform Trust Badges Row */
+      .trust-platforms-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-top: 15px;
+        padding: 12px;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 30px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        max-width: 780px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .platform-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #374151;
+        padding: 4px 12px;
+        border-radius: 20px;
+        background: #f9fafb;
+        border: 1px solid #f3f4f6;
+      }
+      .platform-badge span.icon {
+        font-size: 1.05rem;
+      }
+
+      /* Trust Section Details */
       .trust-section {
         padding: 40px 20px;
         background-color: #ffffff;
@@ -295,11 +337,27 @@
           flex-direction: column;
           text-align: center;
         }
+        .vrm-main-heading {
+          font-size: 1.4rem;
+        }
         .vrm-plate-box {
           flex-direction: row;
         }
         .vrm-input {
-          font-size: 22px;
+          font-size: 20px;
+          letter-spacing: 2px;
+        }
+        .vrm-button {
+          padding: 10px 14px;
+          font-size: 13px;
+        }
+        .trust-platforms-bar {
+          border-radius: 12px;
+          gap: 8px;
+        }
+        .platform-badge {
+          font-size: 0.78rem;
+          padding: 3px 8px;
         }
       }
     </style>
@@ -333,7 +391,19 @@
     <img src="banner.jpg" alt="Tyre Warehouse Denton Burn Banner" onerror="this.style.display='none'">
   </div>
 
-<!-- Authentic UK Yellow Registration Plate Box -->
+  <!-- 3. FEATURED REGISTRATION LOOKUP & TRUST BAR -->
+  <section id="vrm-lookup-section">
+    <div class="vrm-container">
+      
+      <!-- Top Title -->
+      <h2 class="vrm-main-heading">
+        Highly Trusted & Recommended 5-Star Service
+      </h2>
+      <p class="vrm-sub-heading">
+        ⭐ Instant DVLA Vehicle Search — Find Your Tyre Size Below
+      </p>
+
+      <!-- Centerpiece: Authentic UK Yellow Registration Plate Box -->
       <div class="vrm-plate-box">
         
         <!-- Blue UK/GB Flag Badge -->
@@ -342,17 +412,15 @@
           <span class="text">UK</span>
         </div>
         
-        <!-- VRM Registration Input Field -->
-        <input type="text" id="vrmInput" class="vrm-input" placeholder="ENTER REG" maxlength="8" />
-        
-        <!-- Search Button -->
-        <button onclick="searchVehicleReg()" class="vrm-button">
-          LOOKUP
-        </button>
-      </div>
-        
-        <!-- VRM Registration Input Field -->
-        <input type="text" id="vrmInput" class="vrm-input" placeholder="ENTER REG" maxlength="8" />
+        <!-- VRM Registration Input Field (Includes Enter Key Support) -->
+        <input 
+          type="text" 
+          id="vrmInput" 
+          class="vrm-input" 
+          placeholder="ENTER REG" 
+          maxlength="8" 
+          onkeydown="if(event.key === 'Enter') searchVehicleReg()" 
+        />
         
         <!-- Search Button -->
         <button onclick="searchVehicleReg()" class="vrm-button">
@@ -363,10 +431,19 @@
       <!-- Live Search Results Display -->
       <div id="vrmResultContainer" style="margin-top: 20px; display: none; text-align: left;"></div>
 
+      <!-- Bottom Trust Badge Line -->
+      <div class="trust-platforms-bar">
+        <div class="platform-badge"><span class="icon">⭐</span> Google Reviews</div>
+        <div class="platform-badge"><span class="icon">🍎</span> Apple Maps</div>
+        <div class="platform-badge"><span class="icon">🔴</span> Yelp</div>
+        <div class="platform-badge"><span class="icon">🦉</span> TripAdvisor</div>
+        <div class="platform-badge"><span class="icon">🟢</span> Trustpilot</div>
+      </div>
+
     </div>
   </section>
 
-  <!-- 4. HIGHLY TRUSTED GARAGE SECTION -->
+  <!-- 4. HIGHLY TRUSTED GARAGE HIGHLIGHTS -->
   <section class="trust-section">
     <div class="trust-container">
       <h2 class="trust-title">Highly Trusted Garage in Denton Burn</h2>
@@ -463,6 +540,9 @@
         <p style="margin: 0; font-weight: bold; color: #333333;">Checking DVLA database for <strong>${vrmInput}</strong>...</p>
       </div>
     `;
+
+    // Smooth scroll down to the result box so the user sees it immediately
+    resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
     try {
       const response = await fetch(`https://zyfy.uk/v1/vehicle/${vrmInput}`, {
