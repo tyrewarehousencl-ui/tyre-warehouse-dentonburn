@@ -333,15 +333,7 @@
     <img src="banner.jpg" alt="Tyre Warehouse Denton Burn Banner" onerror="this.style.display='none'">
   </div>
 
-  <!-- 3. UK YELLOW NUMBER PLATE SEARCH WIDGET -->
-  <section id="vrm-lookup-section">
-    <div class="vrm-container">
-      
-      <h2 class="vrm-title">
-        🚗 Find Tyres For Your Vehicle
-      </h2>
-
-      <!-- Authentic UK Yellow Registration Plate Box -->
+<!-- Authentic UK Yellow Registration Plate Box -->
       <div class="vrm-plate-box">
         
         <!-- Blue UK/GB Flag Badge -->
@@ -349,6 +341,15 @@
           <span class="flag">🇬🇧</span>
           <span class="text">UK</span>
         </div>
+        
+        <!-- VRM Registration Input Field -->
+        <input type="text" id="vrmInput" class="vrm-input" placeholder="ENTER REG" maxlength="8" />
+        
+        <!-- Search Button -->
+        <button onclick="searchVehicleReg()" class="vrm-button">
+          LOOKUP
+        </button>
+      </div>
         
         <!-- VRM Registration Input Field -->
         <input type="text" id="vrmInput" class="vrm-input" placeholder="ENTER REG" maxlength="8" />
