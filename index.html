@@ -3,689 +3,516 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyre Warehouse | Denton Burn, Newcastle Upon Tyne</title>
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Tyre Warehouse Denton Burn - Tyre Fitting & Vehicle Services Newcastle</title>
+    <meta name="description" content="Tyre Warehouse Denton Burn, Newcastle upon Tyne. Best prices on new and part worn tyres, puncture repairs, wheel balancing, and valves. Call 0191 447 2130.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #001a33;
-            --accent-orange: #ff5500;
-            --yellow-accent: #ffcc00;
-            --text-light: #ffffff;
-            --bg-dark: #080808;
-            --card-bg: #0d1b2a;
-        }
+      /* CSS Reset & General Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        color: #111111;
+        background-color: #ffffff;
+        line-height: 1.6;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      
+      /* Top Action Bar */
+      .top-bar {
+        background-color: #111111;
+        color: #ffffff;
+        padding: 12px 15px;
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+      .top-bar-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+      }
+      .contact-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .action-btns {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .btn-header {
+        background-color: #e53e3e;
+        color: #ffffff;
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        transition: background 0.2s;
+      }
+      .btn-header:hover {
+        background-color: #c53030;
+      }
+      .btn-google {
+        background-color: #4285f4;
+        color: #ffffff;
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+      .btn-google:hover {
+        background-color: #3367d6;
+      }
 
-        * {
-            box-sizing: border-box;
-        }
+      /* Hero / Banner Header */
+      .hero-banner {
+        width: 100%;
+        background-color: #000000;
+        text-align: center;
+      }
+      .hero-banner img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+      /* UK Yellow VRM Lookup Section */
+      #vrm-lookup-section {
+        background-color: #f8f9fa;
+        padding: 35px 15px;
+        text-align: center;
+        border-top: 1px solid #e0e0e0;
+        border-bottom: 2px solid #e0e0e0;
+      }
+      .vrm-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .vrm-title {
+        font-size: 1.5rem;
+        color: #111111;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+      .vrm-plate-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #F5B915;
+        border: 3px solid #000000;
+        border-radius: 10px;
+        padding: 6px 10px;
+        max-width: 480px;
+        margin: 0 auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      }
+      .vrm-gb-badge {
+        background-color: #003399;
+        color: #ffffff;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        user-select: none;
+      }
+      .vrm-gb-badge .flag {
+        font-size: 18px;
+        line-height: 1;
+      }
+      .vrm-gb-badge .text {
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-top: 3px;
+      }
+      .vrm-input {
+        background: transparent;
+        border: none;
+        font-size: 28px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-family: 'Impact', 'Arial Black', sans-serif;
+        color: #000000;
+        width: 100%;
+        text-align: center;
+        outline: none;
+      }
+      .vrm-button {
+        background-color: #111111;
+        color: #ffffff;
+        border: none;
+        padding: 12px 22px;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s;
+        white-space: nowrap;
+      }
+      .vrm-button:hover {
+        background-color: #333333;
+      }
 
-        /* TOP PROMO HERO BANNER */
-        .top-header-banner {
-            width: 100%;
-            background-color: #000;
-            text-align: center;
-            border-bottom: 5px solid var(--accent-orange);
-            box-shadow: 0 5px 20px rgba(255, 85, 0, 0.4);
-        }
+      /* Trust Section */
+      .trust-section {
+        padding: 40px 20px;
+        background-color: #ffffff;
+        text-align: center;
+      }
+      .trust-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .trust-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        color: #111111;
+      }
+      .trust-subtitle {
+        font-size: 1.1rem;
+        color: #555555;
+        margin-bottom: 30px;
+      }
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+      .trust-card {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        padding: 25px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      }
+      .trust-icon {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+      }
+      .trust-card h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
 
-        .top-header-banner img {
-            width: 100%;
-            max-width: 1200px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
+      /* Media Gallery / Promos */
+      .promo-section {
+        padding: 40px 20px;
+        background-color: #f3f4f6;
+      }
+      .promo-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .promo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        align-items: center;
+      }
+      .promo-card {
+        background: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      }
+      .promo-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 2rem 1rem;
-        }
+      /* Services Section */
+      .services-section {
+        padding: 50px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+      }
+      .service-box {
+        border-left: 4px solid #F5B915;
+        background-color: #f9fafb;
+        padding: 20px;
+        border-radius: 0 8px 8px 0;
+      }
+      .service-box h4 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
 
-        /* QUICK ACTION BUTTONS (UNIFIED BRAND COLORS) */
-        .call-bar {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 1rem 0 1.5rem;
-        }
+      /* Footer */
+      footer {
+        background-color: #111111;
+        color: #9ca3af;
+        padding: 30px 20px;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+      footer p {
+        margin-bottom: 8px;
+      }
+      footer a {
+        color: #ffffff;
+        text-decoration: underline;
+      }
 
-        .btn-action {
-            background: linear-gradient(135deg, #ff5500 0%, #ff8800 100%);
-            color: #000;
-            font-weight: 900;
-            font-size: 1.05rem;
-            padding: 14px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(255, 85, 0, 0.4);
-            transition: transform 0.2s, background 0.2s;
-            flex: 1 1 220px;
-            max-width: 350px;
+      @media (max-width: 600px) {
+        .top-bar-container {
+          flex-direction: column;
+          text-align: center;
         }
-
-        .btn-action:hover {
-            background: linear-gradient(135deg, #ffcc00 0%, #ff8800 100%);
-            transform: translateY(-2px);
+        .vrm-plate-box {
+          flex-direction: row;
         }
-
-        /* HIGHLY TRUSTED MULTI-PLATFORM BADGE */
-        .trust-wrapper {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            width: 100%;
+        .vrm-input {
+          font-size: 22px;
         }
-
-        .trust-badge {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--card-bg);
-            color: var(--text-light);
-            padding: 16px 28px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.7);
-            border: 2px solid var(--accent-orange);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .trust-badge-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .trust-badge .badge-title {
-            font-weight: 900;
-            font-size: 1.25rem;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .trust-badge .stars {
-            color: var(--yellow-accent);
-            font-size: 1.35rem;
-            display: flex;
-            gap: 4px;
-        }
-
-        .platform-icons-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            width: 100%;
-            margin-top: 4px;
-        }
-
-        .platform-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            color: #ddd;
-            background: rgba(255,255,255,0.05);
-            padding: 6px 14px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.1);
-            font-weight: bold;
-        }
-
-        .platform-item i {
-            font-size: 1.1rem;
-        }
-
-        /* ABOUT US SECTION */
-        .about-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 2px solid rgba(255, 85, 0, 0.5);
-            margin-bottom: 2.5rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-        }
-
-        .about-card h2 {
-            color: var(--accent-orange);
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            margin-top: 0;
-            border-bottom: 2px solid rgba(255,255,255,0.1);
-            padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        /* IMAGE SHOWCASE WRAPPERS */
-        .promo-showcase {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 3px solid var(--accent-orange);
-            box-shadow: 0 0 25px rgba(255, 85, 0, 0.3);
-            background: #000;
-        }
-
-        .promo-showcase img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* GRID CARDS & SERVICES */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 2px solid rgba(255, 85, 0, 0.4);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-        }
-
-        .card h3 {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            border-bottom: 3px solid var(--accent-orange);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .card ul li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card ul li i {
-            color: var(--accent-orange);
-        }
-
-        /* FEATURED ZOOMED VALVE SECTION */
-        .valve-feature-container {
-            background: #050b14;
-            border-radius: 12px;
-            border: 3px solid var(--accent-orange);
-            padding: 1.5rem;
-            margin-bottom: 2.5rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-            box-shadow: 0 0 25px rgba(255, 85, 0, 0.25);
-        }
-
-        .valve-zoom-box {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            border: 2px solid var(--yellow-accent);
-            height: 320px;
-            background: #000;
-        }
-
-        .valve-zoom-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scale(1.25);
-            transition: transform 0.4s ease-in-out;
-            display: block;
-        }
-
-        .valve-zoom-box:hover img {
-            transform: scale(1.5);
-        }
-
-        .zoom-badge {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(255, 85, 0, 0.9);
-            color: #fff;
-            padding: 6px 12px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-            pointer-events: none;
-        }
-
-        .valve-details h3 {
-            color: var(--yellow-accent);
-            font-size: 1.6rem;
-            margin-top: 0;
-            text-transform: uppercase;
-        }
-
-        /* OPENING HOURS BLOCK */
-        .hours-block {
-            background: #111;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-orange);
-            margin-bottom: 2.5rem;
-        }
-
-        .hours-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .hours-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            border-bottom: 1px dotted rgba(255,255,255,0.15);
-        }
-
-        /* MAP SECTION */
-        .map-container {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid var(--accent-orange);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            margin-bottom: 2.5rem;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 350px;
-            border: 0;
-        }
-
-        /* CONTACT FORM */
-        .contact-section {
-            background: #111;
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 2px solid #222;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-        }
-
-        .contact-section h3 {
-            color: var(--accent-orange);
-            text-align: center;
-            font-size: 2rem;
-            margin-top: 0;
-            text-transform: uppercase;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 14px;
-            border: 2px solid #282828;
-            background: #1a1a1a;
-            color: #fff;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-orange);
-        }
-
-        button[type="submit"] {
-            background-color: var(--accent-orange);
-            color: #000;
-            border: none;
-            padding: 16px 30px;
-            font-size: 1.2rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        button[type="submit"]:hover {
-            background-color: var(--yellow-accent);
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #000d1a;
-            text-align: center;
-            padding: 3rem 1rem 2rem;
-            border-top: 5px solid var(--accent-orange);
-            margin-top: 3rem;
-        }
-
-        .footer-info {
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .brand-logos {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 20px 0;
-            font-weight: 900;
-            font-style: italic;
-            font-size: 1rem;
-        }
-
-        .brand-item {
-            background: rgba(255,255,255,0.05);
-            padding: 8px 16px;
-            border-radius: 5px;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--yellow-accent);
-        }
-
-        .copyright {
-            color: #888;
-            font-size: 0.9rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 1.5rem;
-        }
-
-        /* RESPONSIVE DESIGN ADJUSTMENTS */
-        @media (max-width: 850px) {
-            .valve-feature-container {
-                grid-template-columns: 1fr;
-            }
-            .valve-zoom-box {
-                height: 260px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 1.2rem 0.8rem;
-            }
-            .btn-action {
-                width: 100%;
-                max-width: 100%;
-            }
-            .contact-section {
-                padding: 1.5rem 1rem;
-            }
-            .card {
-                padding: 1.5rem 1rem;
-            }
-            .trust-badge {
-                padding: 12px 15px;
-            }
-            .trust-badge .badge-title {
-                font-size: 1.05rem;
-                text-align: center;
-            }
-            .trust-badge .stars {
-                font-size: 1.1rem;
-            }
-        }
+      }
     </style>
 </head>
 <body>
 
-    <!-- TOP HERO BANNER: MAIN PROMO OFFER -->
-    <div class="top-header-banner">
-        <img src="main-promo.jpg" alt="30% Off Set of 4 Tyres Special Offer Tyre Warehouse">
+  <!-- 1. TOP CONTACT & ACTION BAR -->
+  <header class="top-bar">
+    <div class="top-bar-container">
+      <div class="contact-links">
+        <a href="tel:01914472130" class="contact-item">
+          <span>📞 Call:</span> <strong>0191 447 2130</strong>
+        </a>
+        <a href="tel:07804911855" class="contact-item">
+          <span>📱 Mobile:</span> <strong>07804 911 855</strong>
+        </a>
+      </div>
+      <div class="action-btns">
+        <a href="https://maps.google.com/?q=Tyre+Warehouse+Denton+Burn" target="_blank" class="btn-header">
+          📍 Get Directions
+        </a>
+        <a href="https://g.page/r/TyreWarehouseDentonBurn/review" target="_blank" class="btn-google">
+          ⭐ Rate Us On Google
+        </a>
+      </div>
     </div>
+  </header>
 
-    <div class="container">
+  <!-- 2. MAIN BANNER -->
+  <div class="hero-banner">
+    <img src="banner.jpg" alt="Tyre Warehouse Denton Burn Banner" onerror="this.style.display='none'">
+  </div>
+
+  <!-- 3. UK YELLOW NUMBER PLATE SEARCH WIDGET -->
+  <section id="vrm-lookup-section">
+    <div class="vrm-container">
+      
+      <h2 class="vrm-title">
+        🚗 Find Tyres For Your Vehicle
+      </h2>
+
+      <!-- Authentic UK Yellow Registration Plate Box -->
+      <div class="vrm-plate-box">
         
-        <!-- CALL BUTTONS & QUICK ACTIONS BAR -->
-        <div class="call-bar">
-            <a href="tel:01914472130" class="btn-action">
-                <i class="fa-solid fa-phone"></i> Call: 0191 447 2130
-            </a>
-            <a href="tel:07804911855" class="btn-action">
-                <i class="fa-solid fa-mobile-screen"></i> Mobile: 07804 911 855
-            </a>
-            <!-- Get Directions mapped to 677 West Rd -->
-            <a href="https://www.google.com/maps/dir//Tyre+Warehouse,+677+West+Rd,+Denton+Burn,+Newcastle+upon+Tyne+NE15+7QQ" target="_blank" class="btn-action">
-                <i class="fa-solid fa-location-dot"></i> Get Directions
-            </a>
-            <!-- Direct Google Review Prompt Link -->
-            <a href="https://g.page/r/CSRbT-FU-FCYEBM/review" target="_blank" class="btn-action">
-                <i class="fa-brands fa-google"></i> Rate Us On Google
-            </a>
-        </div>
-
-        <!-- HIGHLY TRUSTED 5-STAR MULTI-PLATFORM BADGE -->
-        <div class="trust-wrapper">
-            <div class="trust-badge">
-                <div class="trust-badge-header">
-                    <i class="fa-solid fa-shield-halved" style="color: var(--accent-orange); font-size: 1.4rem;"></i>
-                    <span class="badge-title">Highly Trusted & Recommended 5-Star Service</span>
-                    <!-- 5 Solid Gold Stars -->
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-
-                <!-- Trusted Platforms Row With Brand Colors -->
-                <div class="platform-icons-row">
-                    <span class="platform-item"><i class="fa-brands fa-google" style="color: #4285F4;"></i> Google</span>
-                    <span class="platform-item"><i class="fa-brands fa-apple" style="color: #ffffff;"></i> Apple Maps</span>
-                    <span class="platform-item"><i class="fa-brands fa-yelp" style="color: #FF1A1A;"></i> Yelp</span>
-                    <span class="platform-item"><i class="fa-brands fa-tripadvisor" style="color: #34E0A1;"></i> TripAdvisor</span>
-                    <span class="platform-item"><i class="fa-solid fa-star" style="color: #00b67a;"></i> Trustpilot</span>
-                    <span class="platform-item"><i class="fa-brands fa-facebook" style="color: #1877F2;"></i> Facebook</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ABOUT US SECTION -->
-        <div class="about-card">
-            <h2><i class="fa-solid fa-warehouse"></i> About Tyre Warehouse Denton Burn</h2>
-            <p>Welcome to <strong>Tyre Warehouse</strong>, your trusted complete tyre specialist located on West Road in Denton Burn, Newcastle Upon Tyne. We carry over <strong>3,000+ new tyres in stock</strong>, providing rapid, top-quality fitting services for cars, vans, SUVs, and 4x4s.</p>
-            <p>Whether you need budget-friendly replacements, premium performance brands, emergency puncture repairs, or specialized TPMS electronic sensor maintenance, our expert technicians deliver fast, reliable service at prices that won't be beaten.</p>
-        </div>
-
-        <!-- SECONDARY BANNER / MAIN BRANDING -->
-        <div class="promo-showcase">
-            <img src="banner.jpg" alt="Tyre Warehouse Open 7 Days Newcastle">
-        </div>
-
-        <!-- SERVICES GRID -->
-        <div class="grid">
-            <div class="card">
-                <h3><i class="fa-solid fa-wrench" style="color: var(--accent-orange);"></i> Services & Stock</h3>
-                <ul>
-                    <li><i class="fa-solid fa-circle-check"></i> Over 3,000+ Tyres Always in Stock</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Cars, Vans, SUVs & 4x4s Covered</li>
-                    <li><i class="fa-solid fa-circle-check"></i> On-the-Spot Fast Fitting Service</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Digital Wheel Balancing & Alignment</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Puncture Repairs & Valve Replacements</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Premium & Budget Brands Available</li>
-                </ul>
-            </div>
-
-            <!-- OPENING HOURS SUMMARY -->
-            <div class="hours-block">
-                <h3 style="color: var(--accent-orange); margin-top: 0; text-transform: uppercase;">
-                    <i class="fa-solid fa-clock"></i> Opening Hours (Open 7 Days)
-                </h3>
-                <div class="hours-grid">
-                    <div class="hours-item"><span>Monday - Friday</span> <strong>09:00 - 18:00</strong></div>
-                    <div class="hours-item"><span>Saturday</span> <strong>09:00 - 18:00</strong></div>
-                    <div class="hours-item"><span>Sunday</span> <strong>10:00 - 16:00</strong></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- FEATURED CLOSE-UP / ZOOMED VALVE SECTION -->
-        <div class="valve-feature-container">
-            <div class="valve-zoom-box">
-                <span class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Valve & TPMS Detail</span>
-                <img src="valves-services.jpg" alt="TPMS Sensor Valves and Valve Services Close Up">
-            </div>
-
-            <div class="valve-details">
-                <h3><i class="fa-solid fa-microchip"></i> TPMS Sensors & Valve Servicing</h3>
-                <p>Faulty or corroded tire valves cause persistent air leaks. We specialize in comprehensive valve care for all vehicle makes and models:</p>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 6px 0;"><i class="fa-solid fa-circle-check" style="color: var(--accent-orange);"></i> <strong>TPMS Diagnostics & Replacement:</strong> Full programming and reset for Tyre Pressure Monitoring Systems.</li>
-                    <li style="padding: 6px 0;"><i class="fa-solid fa-circle-check" style="color: var(--accent-orange);"></i> <strong>Rubber & Alloy Valves:</strong> High-pressure standard and chrome/metal valve replacements.</li>
-                    <li style="padding: 6px 0;"><i class="fa-solid fa-circle-check" style="color: var(--accent-orange);"></i> <strong>Corrosion & Leak Prevention:</strong> Stem seal checks to prevent slow pressure loss.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- MAIN FLYER SHOWCASE -->
-        <div class="promo-showcase" style="border-color: #0066ff;">
-            <img src="main-flyer.jpg" alt="Tyre Warehouse Denton Burn Complete Service Details">
-        </div>
-
-        <!-- GOOGLE MAP LOCATION -->
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.871923482759!2d-1.6705!3d54.9785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e703f5a05b33f%3A0x8687798363717277!2s677%20West%20Rd%2C%20Denton%20Burn%2C%20Newcastle%20upon%20Tyne%20NE15%207QQ!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk" 
-                allowfullscreen="" 
-                loading="lazy"
-                title="Tyre Warehouse Location Map">
-            </iframe>
-        </div>
-
-        <!-- QUOTE REQUEST FORM WITH AUTO-REPLY, GDPR & DISCLAIMER -->
-        <div class="contact-section">
-            <h3><i class="fa-envelope fa-solid"></i> Get A Free Tyre Quote</h3>
-            <form action="https://formsubmit.co/tyrewarehouse.ncl@gmail.com" method="POST">
-                
-                <!-- SECURITY & ANTI-SPAM SETTINGS -->
-                <input type="text" name="_honey" style="display:none">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="🚗 New Tyre Quote Request - Website">
-                <input type="hidden" name="_autoresponse" value="Thank you for contacting Tyre Warehouse Denton Burn! We have received your quote request. Our team is reviewing your details and will give you a call or email back shortly. For immediate assistance, feel free to call us directly on 0191 447 2130 or 07804 911855.">
-
-                <div class="form-group">
-                    <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="Name" required placeholder="e.g. John Smith" autocomplete="name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Your Email *</label>
-                    <input type="email" id="email" name="email" required placeholder="e.g. john@example.com" autocomplete="email">
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Your Phone Number *</label>
-                    <input type="tel" id="phone" name="Phone" required placeholder="e.g. 07804 911855" autocomplete="tel">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Your Tyre Request (Size, Reg number, or quantity) *</label>
-                    <textarea id="message" name="Message" rows="4" required placeholder="e.g. Looking for two 205/55 R16 tyres fitted..."></textarea>
-                </div>
-
-                <!-- ALL-IN-ONE GDPR, COOKIE & TERMS CONSENT CHECKBOX -->
-                <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 1.5rem;">
-                    <input type="checkbox" id="legal_consent" name="Consent_Agreed" value="Yes" required style="width: auto; margin-top: 4px; cursor: pointer;">
-                    <label for="legal_consent" style="font-size: 0.88rem; font-weight: normal; color: #ccc; cursor: pointer; line-height: 1.4;">
-                        I agree to Tyre Warehouse processing my details to respond to this request, and I accept the website's use of essential cookies. We respect your privacy and will never sell your information.
-                    </label>
-                </div>
-
-                <!-- SUBMIT BUTTON -->
-                <button type="submit">Send Quote Request</button>
-
-                <!-- BUSINESS LEGAL DISCLAIMER -->
-                <p style="font-size: 0.8rem; color: #888; text-align: center; margin-top: 15px; margin-bottom: 0;">
-                    🔒 <em>Note: Online quotes are non-binding estimates subject to physical tyre inspection, wheel condition, and stock availability at the time of fitting.</em>
-                </p>
-            </form>
-        </div>
-
-    </div>
-
-    <!-- FOOTER & LEGAL COPYRIGHT -->
-    <footer>
-        <div class="footer-info">
-            <p style="font-size: 1.3rem; color: var(--text-light); margin: 0 0 10px;">
-                Call Us 7 Days a Week: <strong style="color: var(--accent-orange);">0191 447 2130</strong> | <strong style="color: var(--accent-orange);">+44 780 4911 855</strong>
-            </p>
-            <p style="color: #ccc; margin-bottom: 15px;">
-                📍 677 West Rd, Denton Burn, Newcastle Upon Tyne, NE15 7QQ, United Kingdom
-            </p>
+        <!-- Blue UK/GB Flag Badge -->
+        <div class="vrm-gb-badge">
+          <span class="flag">🇬🇧</span>
+          <span class="text">UK</span>
         </div>
         
-        <div class="brand-logos">
-            <span class="brand-item">MICHELIN</span>
-            <span class="brand-item">PIRELLI</span>
-            <span class="brand-item">CONTINENTAL</span>
-            <span class="brand-item">GOODYEAR</span>
-            <span class="brand-item">DUNLOP</span>
-            <span class="brand-item">HANKOOK</span>
-        </div>
+        <!-- VRM Registration Input Field -->
+        <input type="text" id="vrmInput" class="vrm-input" placeholder="ENTER REG" maxlength="8" />
+        
+        <!-- Search Button -->
+        <button onclick="searchVehicleReg()" class="vrm-button">
+          LOOKUP
+        </button>
+      </div>
 
-        <div class="copyright">
-            <p>&copy; 2026 Tyre Warehouse Denton Burn. All Rights Reserved.</p>
-        </div>
-    </footer>
+      <!-- Live Search Results Display -->
+      <div id="vrmResultContainer" style="margin-top: 20px; display: none; text-align: left;"></div>
 
+    </div>
+  </section>
+
+  <!-- 4. HIGHLY TRUSTED GARAGE SECTION -->
+  <section class="trust-section">
+    <div class="trust-container">
+      <h2 class="trust-title">Highly Trusted Garage in Denton Burn</h2>
+      <p class="trust-subtitle">Your local specialists for fast, reliable, and affordable tyre replacement & servicing in Newcastle.</p>
+      
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon">🛞</div>
+          <h3>Massive Tyre Stock</h3>
+          <p>Over 3,000 budget, mid-range, and premium tyres ready for immediate fitting.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon">⚡</div>
+          <h3>Fast Drive-In Service</h3>
+          <p>No appointment necessary! Pop in for instant fitting, balancing, and repairs.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon">💰</div>
+          <h3>Unbeatable Value</h3>
+          <p>Transparent pricing with zero hidden fees. Quality guaranteed on all fitting.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon">⭐</div>
+          <h3>Top Customer Rated</h3>
+          <p>Trusted by hundreds of local drivers in Denton Burn and across Newcastle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PROMOS & FLYERS GALLERY -->
+  <section class="promo-section">
+    <div class="promo-container">
+      <div class="promo-grid">
+        <div class="promo-card">
+          <img src="main-flyer.jpg" alt="Tyre Warehouse Denton Burn Main Flyer" onerror="this.style.display='none'">
+        </div>
+        <div class="promo-card">
+          <img src="main-promo.jpg" alt="Tyre Warehouse Denton Burn Promotions" onerror="this.style.display='none'">
+        </div>
+        <div class="promo-card">
+          <img src="valves-services.jpg" alt="Valves & Services" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. OUR SERVICES SECTION -->
+  <section class="services-section">
+    <h2 style="font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 10px;">Our Garage Services</h2>
+    <p style="text-align: center; color: #666666;">Comprehensive tyre care and maintenance under one roof in Denton Burn.</p>
+    
+    <div class="services-grid">
+      <div class="service-box">
+        <h4>New & Part-Worn Tyres</h4>
+        <p>Premium brands (Michelin, Continental, Goodyear) alongside budget-friendly new and quality inspected part-worn tyres.</p>
+      </div>
+      <div class="service-box">
+        <h4>Wheel Balancing & Alignment</h4>
+        <p>Precision balancing to prevent uneven wear, steering vibration, and extend the lifespan of your tyres.</p>
+      </div>
+      <div class="service-box">
+        <h4>Puncture Repairs</h4>
+        <p>Fast, safe puncture repair services adhering to British Safety Standards (BS AU 159).</p>
+      </div>
+      <div class="service-box">
+        <h4>Valves & Tyre Servicing</h4>
+        <p>TPMS sensor checking, standard valve replacements, and air pressure checks for peak fuel efficiency.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FOOTER & LOCATION INFO -->
+  <footer>
+    <p><strong>Tyre Warehouse Denton Burn</strong> — Newcastle upon Tyne</p>
+    <p>Landline: <a href="tel:01914472130">0191 447 2130</a> | Mobile: <a href="tel:07804911855">07804 911 855</a></p>
+    <p style="margin-top: 15px; font-size: 0.8rem; color: #6b7280;">© Tyre Warehouse Denton Burn. All Rights Reserved.</p>
+  </footer>
+
+  <!-- 8. VRM LOOKUP JAVASCRIPT -->
+  <script>
+  async function searchVehicleReg() {
+    const vrmInput = document.getElementById('vrmInput').value.trim().replace(/\s+/g, '').toUpperCase();
+    const resultContainer = document.getElementById('vrmResultContainer');
+
+    if (!vrmInput) {
+      alert("Please enter a registration plate.");
+      return;
+    }
+
+    resultContainer.style.display = 'block';
+    resultContainer.innerHTML = `
+      <div style="background: #ffffff; border: 2px solid #F5B915; padding: 16px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <p style="margin: 0; font-weight: bold; color: #333333;">Checking DVLA database for <strong>${vrmInput}</strong>...</p>
+      </div>
+    `;
+
+    try {
+      const response = await fetch(`https://zyfy.uk/v1/vehicle/${vrmInput}`, {
+        method: 'GET',
+        headers: {
+          'X-Api-Key': 'ea_live_tPzJU-ofaYM9IIShzJGn8pYTfDOc1z4jQm07kVJkmbc',
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const make = data.make || 'Vehicle';
+        const color = data.colour || data.signals?.colour || 'Standard';
+        const tax = data.signals?.taxStatus || 'Active';
+        const mot = data.signals?.motStatus || 'Active';
+
+        resultContainer.innerHTML = `
+          <div style="background: #f0fdf4; border: 2px solid #16a34a; padding: 20px; border-radius: 10px; color: #14532d; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <h3 style="margin: 0 0 8px 0; color: #15803d; font-size: 1.25rem;">✅ Vehicle Found: ${make} (${color})</h3>
+            <p style="margin: 0 0 12px 0; font-size: 0.95rem; color: #365314;">
+              <strong>MOT Status:</strong> ${mot.toUpperCase()} | <strong>Tax Status:</strong> ${tax.toUpperCase()}
+            </p>
+            <div style="background: #ffffff; border-left: 4px solid #16a34a; padding: 12px; margin-bottom: 15px; border-radius: 4px;">
+              <p style="margin: 0; font-weight: bold; color: #111111;">
+                We have budget, mid-range, and premium tyres in stock for this ${make}!
+              </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="tel:01914472130" style="background: #16a34a; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">📞 Call 0191 447 2130</a>
+              <a href="tel:07804911855" style="background: #111111; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">📱 Mobile: 07804 911 855</a>
+            </div>
+          </div>
+        `;
+      } else {
+        resultContainer.innerHTML = `
+          <div style="background: #fff7ed; border: 2px solid #ea580c; padding: 16px; border-radius: 8px; color: #9a3412;">
+            <p style="margin: 0; font-weight: bold;">⚠️ Vehicle registration not found.</p>
+            <p style="margin: 6px 0 0 0; font-size: 0.9rem;">Please double-check the plate or call us directly at <strong>0191 447 2130</strong> for instant stock verification.</p>
+          </div>
+        `;
+      }
+    } catch (err) {
+      resultContainer.innerHTML = `
+        <div style="background: #fff7ed; border: 2px solid #ea580c; padding: 16px; border-radius: 8px; color: #9a3412;">
+          <p style="margin: 0; font-weight: bold;">⚠️ Unable to reach lookup database.</p>
+          <p style="margin: 6px 0 0 0; font-size: 0.9rem;">Please call <strong>0191 447 2130</strong> directly for tyre options.</p>
+        </div>
+      `;
+    }
+  }
+  </script>
 </body>
 </html>
