@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tyre Warehouse Denton Burn - Tyre Fitting & Vehicle Services Newcastle</title>
     <meta name="description" content="Tyre Warehouse Denton Burn, Newcastle upon Tyne. Best prices on new and part worn tyres, puncture repairs, wheel balancing, and valves. Call 0191 447 2130.">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
       /* CSS Reset & General Styles */
       * {
@@ -55,6 +57,9 @@
         align-items: center;
         gap: 6px;
       }
+      .contact-item:hover {
+        text-decoration: underline;
+      }
       .action-btns {
         display: flex;
         align-items: center;
@@ -79,6 +84,7 @@
         border-radius: 4px;
         font-size: 0.85rem;
         font-weight: 700;
+        transition: background 0.2s;
       }
       .btn-google:hover {
         background-color: #3367d6;
@@ -97,34 +103,26 @@
         margin: 0 auto;
       }
 
-      /* Feature Section: Highly Trusted Header + Yellow VRM Lookup + Platforms Bar */
+      /* UK Yellow VRM Lookup Section */
       #vrm-lookup-section {
         background-color: #f8f9fa;
-        padding: 40px 15px;
+        padding: 35px 15px;
         text-align: center;
         border-top: 1px solid #e0e0e0;
         border-bottom: 2px solid #e0e0e0;
       }
       .vrm-container {
-        max-width: 850px;
+        max-width: 800px;
         margin: 0 auto;
       }
-      .vrm-main-heading {
-        font-size: 1.85rem;
+      .vrm-title {
+        font-size: 1.5rem;
         color: #111111;
-        margin-bottom: 6px;
+        margin-bottom: 15px;
         text-transform: uppercase;
-        font-weight: 900;
+        font-weight: 800;
         letter-spacing: 0.5px;
       }
-      .vrm-sub-heading {
-        font-size: 1.05rem;
-        color: #d97706;
-        font-weight: 700;
-        margin-bottom: 22px;
-      }
-      
-      /* Yellow License Plate Box */
       .vrm-plate-box {
         display: flex;
         align-items: center;
@@ -133,9 +131,9 @@
         border: 3px solid #000000;
         border-radius: 10px;
         padding: 6px 10px;
-        max-width: 520px;
-        margin: 0 auto 25px auto;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        max-width: 480px;
+        margin: 0 auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.18);
       }
       .vrm-gb-badge {
         background-color: #003399;
@@ -149,6 +147,7 @@
         justify-content: center;
         margin-right: 10px;
         user-select: none;
+        flex-shrink: 0;
       }
       .vrm-gb-badge .flag {
         font-size: 18px;
@@ -172,57 +171,32 @@
         text-align: center;
         outline: none;
       }
+      .vrm-input::placeholder {
+        color: rgba(0, 0, 0, 0.35);
+        letter-spacing: 2px;
+      }
       .vrm-button {
         background-color: #111111;
         color: #ffffff;
         border: none;
-        padding: 12px 24px;
+        padding: 12px 22px;
         font-size: 15px;
         font-weight: bold;
         border-radius: 6px;
         cursor: pointer;
-        transition: background 0.2s, transform 0.1s;
+        transition: background 0.2s, opacity 0.2s;
         white-space: nowrap;
+        flex-shrink: 0;
       }
       .vrm-button:hover {
         background-color: #333333;
-        transform: scale(1.02);
+      }
+      .vrm-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
       }
 
-      /* Multi-Platform Trust Badges Row */
-      .trust-platforms-bar {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-        margin-top: 15px;
-        padding: 12px;
-        background: #ffffff;
-        border: 1px solid #e5e7eb;
-        border-radius: 30px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        max-width: 780px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .platform-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 0.88rem;
-        font-weight: 700;
-        color: #374151;
-        padding: 4px 12px;
-        border-radius: 20px;
-        background: #f9fafb;
-        border: 1px solid #f3f4f6;
-      }
-      .platform-badge span.icon {
-        font-size: 1.05rem;
-      }
-
-      /* Trust Section Details */
+      /* Trust Section */
       .trust-section {
         padding: 40px 20px;
         background-color: #ffffff;
@@ -332,16 +306,18 @@
         text-decoration: underline;
       }
 
+      /* Mobile Adjustments */
       @media (max-width: 600px) {
         .top-bar-container {
           flex-direction: column;
           text-align: center;
         }
-        .vrm-main-heading {
-          font-size: 1.4rem;
+        .action-btns {
+          width: 100%;
+          justify-content: center;
         }
         .vrm-plate-box {
-          flex-direction: row;
+          padding: 5px 8px;
         }
         .vrm-input {
           font-size: 20px;
@@ -351,13 +327,9 @@
           padding: 10px 14px;
           font-size: 13px;
         }
-        .trust-platforms-bar {
-          border-radius: 12px;
-          gap: 8px;
-        }
-        .platform-badge {
-          font-size: 0.78rem;
-          padding: 3px 8px;
+        .vrm-gb-badge {
+          padding: 6px 8px;
+          margin-right: 6px;
         }
       }
     </style>
@@ -376,10 +348,10 @@
         </a>
       </div>
       <div class="action-btns">
-        <a href="https://maps.google.com/?q=Tyre+Warehouse+Denton+Burn" target="_blank" class="btn-header">
+        <a href="https://maps.google.com/?q=Tyre+Warehouse+Denton+Burn" target="_blank" rel="noopener" class="btn-header">
           📍 Get Directions
         </a>
-        <a href="https://g.page/r/TyreWarehouseDentonBurn/review" target="_blank" class="btn-google">
+        <a href="https://g.page/r/TyreWarehouseDentonBurn/review" target="_blank" rel="noopener" class="btn-google">
           ⭐ Rate Us On Google
         </a>
       </div>
@@ -391,130 +363,120 @@
     <img src="banner.jpg" alt="Tyre Warehouse Denton Burn Banner" onerror="this.style.display='none'">
   </div>
 
-  <!-- 3. FEATURED REGISTRATION LOOKUP & TRUST BAR -->
-  <section id="vrm-lookup-section">
-    <div class="vrm-container">
+  <!-- MAIN CONTENT WRAPPER -->
+  <main>
+    <!-- 3. UK YELLOW NUMBER PLATE SEARCH WIDGET -->
+    <section id="vrm-lookup-section">
+      <div class="vrm-container">
+        
+        <h2 class="vrm-title">🚗 Find Tyres For Your Vehicle</h2>
+
+        <!-- Authentic UK Yellow Registration Plate Box -->
+        <div class="vrm-plate-box">
+          
+          <!-- Blue UK/GB Flag Badge -->
+          <div class="vrm-gb-badge" aria-hidden="true">
+            <span class="flag">🇬🇧</span>
+            <span class="text">UK</span>
+          </div>
+          
+          <!-- VRM Registration Input Field -->
+          <input 
+            type="text" 
+            id="vrmInput" 
+            class="vrm-input" 
+            placeholder="ENTER REG" 
+            maxlength="8" 
+            aria-label="Vehicle Registration Number"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          
+          <!-- Search Button -->
+          <button id="vrmSearchBtn" onclick="searchVehicleReg()" class="vrm-button" aria-label="Lookup Vehicle Details">
+            LOOKUP
+          </button>
+        </div>
+
+        <!-- Live Search Results Display -->
+        <div id="vrmResultContainer" style="margin-top: 20px; display: none; text-align: left;"></div>
+
+      </div>
+    </section>
+
+    <!-- 4. HIGHLY TRUSTED GARAGE SECTION -->
+    <section class="trust-section">
+      <div class="trust-container">
+        <h2 class="trust-title">Highly Trusted Garage in Denton Burn</h2>
+        <p class="trust-subtitle">Your local specialists for fast, reliable, and affordable tyre replacement & servicing in Newcastle.</p>
+        
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">🛞</div>
+            <h3>Massive Tyre Stock</h3>
+            <p>Over 3,000 budget, mid-range, and premium tyres ready for immediate fitting.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">⚡</div>
+            <h3>Fast Drive-In Service</h3>
+            <p>No appointment necessary! Pop in for instant fitting, balancing, and repairs.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">💰</div>
+            <h3>Unbeatable Value</h3>
+            <p>Transparent pricing with zero hidden fees. Quality guaranteed on all fitting.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon" aria-hidden="true">⭐</div>
+            <h3>Top Customer Rated</h3>
+            <p>Trusted by hundreds of local drivers in Denton Burn and across Newcastle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PROMOS & FLYERS GALLERY -->
+    <section class="promo-section">
+      <div class="promo-container">
+        <div class="promo-grid">
+          <div class="promo-card">
+            <img src="main-flyer.jpg" alt="Tyre Warehouse Denton Burn Main Flyer" onerror="this.style.display='none'">
+          </div>
+          <div class="promo-card">
+            <img src="main-promo.jpg" alt="Tyre Warehouse Denton Burn Promotions" onerror="this.style.display='none'">
+          </div>
+          <div class="promo-card">
+            <img src="valves-services.jpg" alt="Valves & Services" onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. OUR SERVICES SECTION -->
+    <section class="services-section">
+      <h2 style="font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 10px;">Our Garage Services</h2>
+      <p style="text-align: center; color: #666666;">Comprehensive tyre care and maintenance under one roof in Denton Burn.</p>
       
-      <!-- Top Title -->
-      <h2 class="vrm-main-heading">
-        Highly Trusted & Recommended 5-Star Service
-      </h2>
-      <p class="vrm-sub-heading">
-        ⭐ Instant DVLA Vehicle Search — Find Your Tyre Size Below
-      </p>
-
-      <!-- Centerpiece: Authentic UK Yellow Registration Plate Box -->
-      <div class="vrm-plate-box">
-        
-        <!-- Blue UK/GB Flag Badge -->
-        <div class="vrm-gb-badge">
-          <span class="flag">🇬🇧</span>
-          <span class="text">UK</span>
+      <div class="services-grid">
+        <div class="service-box">
+          <h4>New & Part-Worn Tyres</h4>
+          <p>Premium brands (Michelin, Continental, Goodyear) alongside budget-friendly new and quality inspected part-worn tyres.</p>
         </div>
-        
-        <!-- VRM Registration Input Field (Includes Enter Key Support) -->
-        <input 
-          type="text" 
-          id="vrmInput" 
-          class="vrm-input" 
-          placeholder="ENTER REG" 
-          maxlength="8" 
-          onkeydown="if(event.key === 'Enter') searchVehicleReg()" 
-        />
-        
-        <!-- Search Button -->
-        <button onclick="searchVehicleReg()" class="vrm-button">
-          LOOKUP
-        </button>
-      </div>
-
-      <!-- Live Search Results Display -->
-      <div id="vrmResultContainer" style="margin-top: 20px; display: none; text-align: left;"></div>
-
-      <!-- Bottom Trust Badge Line -->
-      <div class="trust-platforms-bar">
-        <div class="platform-badge"><span class="icon">⭐</span> Google Reviews</div>
-        <div class="platform-badge"><span class="icon">🍎</span> Apple Maps</div>
-        <div class="platform-badge"><span class="icon">🔴</span> Yelp</div>
-        <div class="platform-badge"><span class="icon">🦉</span> TripAdvisor</div>
-        <div class="platform-badge"><span class="icon">🟢</span> Trustpilot</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 4. HIGHLY TRUSTED GARAGE HIGHLIGHTS -->
-  <section class="trust-section">
-    <div class="trust-container">
-      <h2 class="trust-title">Highly Trusted Garage in Denton Burn</h2>
-      <p class="trust-subtitle">Your local specialists for fast, reliable, and affordable tyre replacement & servicing in Newcastle.</p>
-      
-      <div class="trust-grid">
-        <div class="trust-card">
-          <div class="trust-icon">🛞</div>
-          <h3>Massive Tyre Stock</h3>
-          <p>Over 3,000 budget, mid-range, and premium tyres ready for immediate fitting.</p>
+        <div class="service-box">
+          <h4>Wheel Balancing & Alignment</h4>
+          <p>Precision balancing to prevent uneven wear, steering vibration, and extend the lifespan of your tyres.</p>
         </div>
-        <div class="trust-card">
-          <div class="trust-icon">⚡</div>
-          <h3>Fast Drive-In Service</h3>
-          <p>No appointment necessary! Pop in for instant fitting, balancing, and repairs.</p>
+        <div class="service-box">
+          <h4>Puncture Repairs</h4>
+          <p>Fast, safe puncture repair services adhering to British Safety Standards (BS AU 159).</p>
         </div>
-        <div class="trust-card">
-          <div class="trust-icon">💰</div>
-          <h3>Unbeatable Value</h3>
-          <p>Transparent pricing with zero hidden fees. Quality guaranteed on all fitting.</p>
-        </div>
-        <div class="trust-card">
-          <div class="trust-icon">⭐</div>
-          <h3>Top Customer Rated</h3>
-          <p>Trusted by hundreds of local drivers in Denton Burn and across Newcastle.</p>
+        <div class="service-box">
+          <h4>Valves & Tyre Servicing</h4>
+          <p>TPMS sensor checking, standard valve replacements, and air pressure checks for peak fuel efficiency.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 5. PROMOS & FLYERS GALLERY -->
-  <section class="promo-section">
-    <div class="promo-container">
-      <div class="promo-grid">
-        <div class="promo-card">
-          <img src="main-flyer.jpg" alt="Tyre Warehouse Denton Burn Main Flyer" onerror="this.style.display='none'">
-        </div>
-        <div class="promo-card">
-          <img src="main-promo.jpg" alt="Tyre Warehouse Denton Burn Promotions" onerror="this.style.display='none'">
-        </div>
-        <div class="promo-card">
-          <img src="valves-services.jpg" alt="Valves & Services" onerror="this.style.display='none'">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. OUR SERVICES SECTION -->
-  <section class="services-section">
-    <h2 style="font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 10px;">Our Garage Services</h2>
-    <p style="text-align: center; color: #666666;">Comprehensive tyre care and maintenance under one roof in Denton Burn.</p>
-    
-    <div class="services-grid">
-      <div class="service-box">
-        <h4>New & Part-Worn Tyres</h4>
-        <p>Premium brands (Michelin, Continental, Goodyear) alongside budget-friendly new and quality inspected part-worn tyres.</p>
-      </div>
-      <div class="service-box">
-        <h4>Wheel Balancing & Alignment</h4>
-        <p>Precision balancing to prevent uneven wear, steering vibration, and extend the lifespan of your tyres.</p>
-      </div>
-      <div class="service-box">
-        <h4>Puncture Repairs</h4>
-        <p>Fast, safe puncture repair services adhering to British Safety Standards (BS AU 159).</p>
-      </div>
-      <div class="service-box">
-        <h4>Valves & Tyre Servicing</h4>
-        <p>TPMS sensor checking, standard valve replacements, and air pressure checks for peak fuel efficiency.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- 7. FOOTER & LOCATION INFO -->
   <footer>
@@ -523,77 +485,104 @@
     <p style="margin-top: 15px; font-size: 0.8rem; color: #6b7280;">© Tyre Warehouse Denton Burn. All Rights Reserved.</p>
   </footer>
 
-  <!-- 8. VRM LOOKUP JAVASCRIPT -->
+  <!-- 8. VRM LOOKUP JAVASCRIPT & UX ENHANCEMENTS -->
   <script>
-  async function searchVehicleReg() {
-    const vrmInput = document.getElementById('vrmInput').value.trim().replace(/\s+/g, '').toUpperCase();
-    const resultContainer = document.getElementById('vrmResultContainer');
+    // Enable "Enter" key trigger on input field & auto-uppercase text
+    document.addEventListener('DOMContentLoaded', function() {
+      const vrmInput = document.getElementById('vrmInput');
+      
+      if (vrmInput) {
+        // Automatically convert typed letters to uppercase
+        vrmInput.addEventListener('input', function() {
+          this.value = this.value.toUpperCase();
+        });
 
-    if (!vrmInput) {
-      alert("Please enter a registration plate.");
-      return;
-    }
-
-    resultContainer.style.display = 'block';
-    resultContainer.innerHTML = `
-      <div style="background: #ffffff; border: 2px solid #F5B915; padding: 16px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-        <p style="margin: 0; font-weight: bold; color: #333333;">Checking DVLA database for <strong>${vrmInput}</strong>...</p>
-      </div>
-    `;
-
-    // Smooth scroll down to the result box so the user sees it immediately
-    resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-    try {
-      const response = await fetch(`https://zyfy.uk/v1/vehicle/${vrmInput}`, {
-        method: 'GET',
-        headers: {
-          'X-Api-Key': 'ea_live_tPzJU-ofaYM9IIShzJGn8pYTfDOc1z4jQm07kVJkmbc',
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const make = data.make || 'Vehicle';
-        const color = data.colour || data.signals?.colour || 'Standard';
-        const tax = data.signals?.taxStatus || 'Active';
-        const mot = data.signals?.motStatus || 'Active';
-
-        resultContainer.innerHTML = `
-          <div style="background: #f0fdf4; border: 2px solid #16a34a; padding: 20px; border-radius: 10px; color: #14532d; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-            <h3 style="margin: 0 0 8px 0; color: #15803d; font-size: 1.25rem;">✅ Vehicle Found: ${make} (${color})</h3>
-            <p style="margin: 0 0 12px 0; font-size: 0.95rem; color: #365314;">
-              <strong>MOT Status:</strong> ${mot.toUpperCase()} | <strong>Tax Status:</strong> ${tax.toUpperCase()}
-            </p>
-            <div style="background: #ffffff; border-left: 4px solid #16a34a; padding: 12px; margin-bottom: 15px; border-radius: 4px;">
-              <p style="margin: 0; font-weight: bold; color: #111111;">
-                We have budget, mid-range, and premium tyres in stock for this ${make}!
-              </p>
-            </div>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-              <a href="tel:01914472130" style="background: #16a34a; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">📞 Call 0191 447 2130</a>
-              <a href="tel:07804911855" style="background: #111111; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">📱 Mobile: 07804 911 855</a>
-            </div>
-          </div>
-        `;
-      } else {
-        resultContainer.innerHTML = `
-          <div style="background: #fff7ed; border: 2px solid #ea580c; padding: 16px; border-radius: 8px; color: #9a3412;">
-            <p style="margin: 0; font-weight: bold;">⚠️ Vehicle registration not found.</p>
-            <p style="margin: 6px 0 0 0; font-size: 0.9rem;">Please double-check the plate or call us directly at <strong>0191 447 2130</strong> for instant stock verification.</p>
-          </div>
-        `;
+        // Trigger search when pressing Enter key
+        vrmInput.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            searchVehicleReg();
+          }
+        });
       }
-    } catch (err) {
+    });
+
+    async function searchVehicleReg() {
+      const inputEl = document.getElementById('vrmInput');
+      const searchBtn = document.getElementById('vrmSearchBtn');
+      const resultContainer = document.getElementById('vrmResultContainer');
+      const vrmInput = inputEl.value.trim().replace(/\s+/g, '').toUpperCase();
+
+      if (!vrmInput) {
+        alert("Please enter a vehicle registration plate.");
+        inputEl.focus();
+        return;
+      }
+
+      // Lock UI while fetching
+      searchBtn.disabled = true;
+      searchBtn.innerText = "SEARCHING...";
+      resultContainer.style.display = 'block';
       resultContainer.innerHTML = `
-        <div style="background: #fff7ed; border: 2px solid #ea580c; padding: 16px; border-radius: 8px; color: #9a3412;">
-          <p style="margin: 0; font-weight: bold;">⚠️ Unable to reach lookup database.</p>
-          <p style="margin: 6px 0 0 0; font-size: 0.9rem;">Please call <strong>0191 447 2130</strong> directly for tyre options.</p>
+        <div style="background: #ffffff; border: 2px solid #F5B915; padding: 16px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <p style="margin: 0; font-weight: bold; color: #333333;">Checking DVLA database for <strong>${vrmInput}</strong>...</p>
         </div>
       `;
+
+      try {
+        const response = await fetch(`https://zyfy.uk/v1/vehicle/${vrmInput}`, {
+          method: 'GET',
+          headers: {
+            'X-Api-Key': 'ea_live_tPzJU-ofaYM9IIShzJGn8pYTfDOc1z4jQm07kVJkmbc',
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          const make = data.make || 'Vehicle';
+          const color = data.colour || data.signals?.colour || 'Standard';
+          const tax = data.signals?.taxStatus || 'Active';
+          const mot = data.signals?.motStatus || 'Active';
+
+          resultContainer.innerHTML = `
+            <div style="background: #f0fdf4; border: 2px solid #16a34a; padding: 20px; border-radius: 10px; color: #14532d; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+              <h3 style="margin: 0 0 8px 0; color: #15803d; font-size: 1.25rem;">✅ Vehicle Found: ${make} (${color})</h3>
+              <p style="margin: 0 0 12px 0; font-size: 0.95rem; color: #365314;">
+                <strong>MOT Status:</strong> ${mot.toUpperCase()} | <strong>Tax Status:</strong> ${tax.toUpperCase()}
+              </p>
+              <div style="background: #ffffff; border-left: 4px solid #16a34a; padding: 12px; margin-bottom: 15px; border-radius: 4px;">
+                <p style="margin: 0; font-weight: bold; color: #111111;">
+                  We have budget, mid-range, and premium tyres in stock for this ${make}!
+                </p>
+              </div>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="tel:01914472130" style="background: #16a34a; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">📞 Call 0191 447 2130</a>
+                <a href="tel:07804911855" style="background: #111111; color: #ffffff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">📱 Mobile: 07804 911 855</a>
+              </div>
+            </div>
+          `;
+        } else {
+          resultContainer.innerHTML = `
+            <div style="background: #fff7ed; border: 2px solid #ea580c; padding: 16px; border-radius: 8px; color: #9a3412;">
+              <p style="margin: 0; font-weight: bold;">⚠️ Vehicle registration not found.</p>
+              <p style="margin: 6px 0 0 0; font-size: 0.9rem;">Please double-check the plate or call us directly at <strong>0191 447 2130</strong> for instant stock verification.</p>
+            </div>
+          `;
+        }
+      } catch (err) {
+        resultContainer.innerHTML = `
+          <div style="background: #fff7ed; border: 2px solid #ea580c; padding: 16px; border-radius: 8px; color: #9a3412;">
+            <p style="margin: 0; font-weight: bold;">⚠️ Unable to reach lookup database.</p>
+            <p style="margin: 6px 0 0 0; font-size: 0.9rem;">Please call <strong>0191 447 2130</strong> directly for tyre options.</p>
+          </div>
+        `;
+      } finally {
+        // Unlock UI
+        searchBtn.disabled = false;
+        searchBtn.innerText = "LOOKUP";
+      }
     }
-  }
   </script>
 </body>
 </html>
